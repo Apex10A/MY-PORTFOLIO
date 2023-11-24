@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Orbitron:wght@400;700;800&family=Poppins:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Bruno+Ace+SC&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Orbitron:wght@400;700;800&family=Poppins:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400&display=swap');
+
+
+*{
+  font-family: 'ABeeZee', sans-serif;
+}
+
+:root{
+  --darkColor: #151515;
+  --lightColor: #ffffff;
+
+}
+.navbar_toggle .bar{
+  width: 25px;
+  height: 3px;
+  position: relative;
+  top: -70px;
+  margin: 5px auto;
+  background-color: #ffffff;
+}
+.navbar_toggle .bar{
+  display: block;
+  cursor: pointer;
+}
+#mobile_menu{
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  transform: translate(5%, 20%);
+
+}
+#mobile-menu.is-active .bar:nth-child(2){
+  opacity: 0;
+}
+#mobile-menu.is-active .bar:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+#mobile-menu.is-active .bar:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+
+}
+@media (max-width: 1000px) {
+#nav-menu{
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  top: -1000px;
+}  
+.nav-menu.active{
+  background-color: #151515;
+  top: 100%;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  z-index: 99;
+
+}
+}
+
+
+#height{
+  height: 100vh;
+  background-color: var(--darkColor);
+}
+#navi{
+  background-color: #3c3939;
+  backdrop-filter: blur(5px);
+}
+/* #btn{
+  background-color: var(--lightColor);
+  border-radius: 30px;
+  color: #151515;
+} */
+#nav{
+  text-indent: 50px;
+}
+#social{
+  background-color: #3c3939;
+  backdrop-filter: blur(40px);
+  border-radius: 35px;
+  padding: 15px 0;
+  width: 10%;
+
+}
+#github, #twitter, #linkedin{
+  font-size: 43px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+#opaque{
+  opacity: 0.4;
+}
+#github:hover, #twitter:hover, #linkedin:hover{
+  opacity: 0.9;
+}
+
+
+/*PROJECT SECTION*/
+#project, #skills, #About, #contact{
+  background-color: #151515;
+  color: #ffffff;
+}
+#textr{
+  background-color: #151515;
+}
+#works{
+  
+}
+#back{
+  background-color: #292525;
+  backdrop-filter: blur(40px);
+  border-radius: 30px;
+  padding: 25px 30px;
+}
+
+#opaques{
+  opacity: 0.5;
+}
+#lang{
+  opacity: 0.8;
+}
+/* #react{
+  opacity: 0.5;
+} */
+
+#about{
+  background-color: #292525;
+  backdrop-filter: blur(40px);
+  border-radius: 30px;
+}
+
+#langs{
+  opacity: 0.6;
+}
+#cont{
+  background-color: #292525;
+  backdrop-filter: blur(30px);
+  border-radius: 30px;
+  padding: 15px 10px;
+}
+#name, #mail, #messa{
+  color: #151515;
+  opacity: 0.6;
+}
+#cont::placeholder{
+  opacity: 1;
+}
+#mailer{
+  background-color: #292525;
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  padding: 15px 15px 15px 25px;
+  
+}
+#enve{
+  background-color: #443d3d;
+  backdrop-filter: blur(30px);
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  
+}
+#btns:hover{
+   opacity: 0.3;
+}
+#tail{
+  transform: translateY(-23px);
+}
+#tail h1{
+  transform: translateY(-7px);
+}
+#image{
+  width: 100px;
+}
+
+/*responsiveness*/
+@media (min-width: 700px) and (max-width: 1025px) {
+  #para{
+    width: 70%;
+  }
+  #dev{
+    transform: translateY(-80px);
+  }
+  
+}
+@media (min-width: 1000px) {
+  #social{
+    width: 40%;
+    padding: 25px 0;
+  }
+  #back{
+    width: 70%;
+  }
+  #rest{
+    width: 90%;
+  }
+  #restz{
+    width: 84%;
+  }
+  #mailer{
+    width: 85%;
+  }
+  #cont{
+    width: 40%;
+  }
+  #dev{
+    transform: translateY(-100px);
+  }
+ 
+}
+@media (max-width: 1000px) {
+  #skills{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height: 100%;
+  }
+  #About{
+    height: 100%;
+  }
+  #about{
+ 
+  }
+  
+}
+@media (min-width: 600px) and (max-width: 1025px) {
+  #para{
+    width: 70%;
+  }
+  #cont{
+    width: 70%;
+  }
+  #social{
+    width: 60%;
+  }
+  
+}
+@media (max-width: 700px) {
+  #github, #twitter, #linkedin{
+    font-size: 25px;
+  }
+  #about{
+    padding: 40px 30px;
+    margin: 0 30px;
+  }
+  #cont{
+    width: 90%;
+  }
+  #name, #mail, #messa{
+    width: 400px;
+  } 
+  #social{
+    width: 80%;
+  }
+  #dev{
+    transform: translateY(-60px);
+  }
+  #btns{
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  #name, #mail, #messa{
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+}
+@media (min-width: 700px) {
+  #about{
+    padding: 40px 50px;
+    width: 60%;
+  }
+  
+  #name, #mail, #messa{
+    width: 400px;
+  } 
+}
+
+@media (max-width: 500px) {
+  #height{
+    height: 100%;
+  }
+ 
+  
+}
+#wiza{
+  width: 400px;
+}
+
+
+/*preloader*/
+#heights{
+  background-color: #151515;
+}
+.circle{
+  width: 60%;
+  margin: auto  ;
+}
+#dev{
+  opacity: 0.5;
+}
+
+/*nav responsiveness*/
+@media (max-width: 760px) {
+  #navi{
+    background-color: #151515;
+    backdrop-filter: blur(60px);
+    line-height: 70px;
+    transition: .5s;
+  }
+  #btn{
+    width: 80%;
+    border-radius: 10px;
+  }
+  #hrz{
+    width: 100%;
+    opacity: 0.2;
+    border: none;
+    border-top: 1px solid white;
+  }
+  #nav{
+    transition: 1s;
+  }
+  #height{
+    padding-top: 40px;
+  }
+  
+}
+
+/*code and view animation*/
+#code{
+  opacity: 0.5;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+#code:hover{
+  opacity: 0.8;
+}
