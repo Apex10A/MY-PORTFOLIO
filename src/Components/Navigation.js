@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const Navigation = () => {
     let Links =[
       {name:"HOME", link:"/"},
-      {name:"WORKS",link:"/Project"},
-      {name:"ABOUT ME",link:"/About"},
-      {name:"CONTACT ME",link:"/Contact"},
+      {name:"WORKS",link:"/project"},
+      {name:"ABOUT ME",link:"/about"},
+      {name:"CONTACT ME",link:"/contact"},
     ];
     let [open,setOpen]=useState(false);
   return (
@@ -30,11 +30,11 @@ const Navigation = () => {
       </div>
 
       </div>
-      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white lg:bg-transparent md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ':'top-[-490px] bg-transparent'}`}>
+      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:bg-transparent md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ':'top-[-490px] bg-transparent'}`}>
         {
           Links.map((link)=>(
             <li key={link.name} className='md:ml-8 font-bold lg:text-lg text-md md:my-0 my-7'>
-              <a href={link.link} className='text-black  lg:text-white hover:text-gray-400 duration-500'>{link.name}</a>
+              <a href={link.link} className='text-black  md:text-white hover:text-gray-400 duration-500'>{link.name}</a>
             </li>
           ))
         }

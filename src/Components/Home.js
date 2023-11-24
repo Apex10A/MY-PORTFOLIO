@@ -14,10 +14,10 @@ const Home = () => {
   return (
     <div className=''>
       <Navigation />
-        <div className='text-white px-10 lg:pt-[250px] pt-32 flex justify-center xl:pb-10 items-center ' id='height'>
-            <div className='block items-center justify-center '>
+        <div className='text-white px-10 lg:pt-[250px] flex justify-center xl:pb-10 items-center ' id='height'>
+            <div className='block items-center justify-center ' id='home-texter'>
             <div className='text-center block' >
-            <h1 className='lg:text-7xl text-6xl lg:w-1/3 sm:w-2/3 mx-auto leading-28 block font-bold'>Hello, i'm <span className='font-extrabold'> Praise Afolabi</span></h1>
+            <h1 className='lg:text-7xl text-6xl lg:w-1/3 sm:w-2/3 mx-auto transform sm:pt-0 leading-28 block font-bold'>Hello, i'm <span className='font-extrabold'> Praise Afolabi</span></h1>
             <p className='lg:w-1/3 text-md lg:text-xl lg:leading-0 px-4 lg:px-0 leading-8 pt-5 mx-auto' id='para'>A frontend virtuoso, crafting visually stunning experiences. With HTML, CSS, and JavaScript, I bring ideas to life. Let's collaborate and create digital magic that leaves a lasting impression!</p>
             </div>
             {/* <div className='absolute top-10'>
@@ -29,7 +29,7 @@ const Home = () => {
             <div>
             <Link to='/project'>
             <div className=''>
-            <button type='button' className='mx-auto relative z-[10] block mt-10 lg:mt-6 mb-10 font-extrabold text-lg px-20 py-5 hover:bg-transparent hover:border hover:border-white hover:text-white rounded-full bg-white text-black transition-background-color duration-500 ease-in-out' id='btn'>View Works</button>
+            <button type='button' className='mx-auto relative z-[10] block mt-10 lg:mt-6 mb-10 font-extrabold text-lg sm:px-20 px-10 py-5 hover:bg-transparent hover:border hover:border-white hover:text-white rounded-full bg-white text-black transition-background-color duration-500 ease-in-out' id='btn'>View Works</button>
             </div>
             </Link>
 
