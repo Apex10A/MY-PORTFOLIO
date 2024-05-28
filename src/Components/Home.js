@@ -9,11 +9,13 @@ import {  } from '@heroicons/react/solid';
 import Hello from './Hellos.gif'
 import Planet from './planet.gif'
 import {Link} from "react-router-dom"
+import Maintenance from './Maintenance/Maintenance';
 
 const Home = () => {
   return (
     <div className=''>
       <Navigation />
+      <Maintenance/>
         <div className='text-white px-10 lg:pt-[250px] flex justify-center xl:pb-10 items-center ' id='height'>
             <div className='block items-center justify-center ' id='home-texter'>
             <div className='text-center block' >
