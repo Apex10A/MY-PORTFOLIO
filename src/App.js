@@ -6,6 +6,7 @@ import Project from './Components/project/Project';
 import Skillz from './Components/Skills/Skillz';
 import About from './Components/Story/About';
 import Contact from './Components/Contacts/Contact';
+import Maintenance from './Components/Maintenance/Maintenance';
 import { Routes, Route } from "react-router-dom"
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
        <Route path="/" 
         element={<Home />}
       />
+      {/* <Route path='/main' element={<Maintenance />}/> */}
 
       <Route path="/project" 
         element={<Project />}
