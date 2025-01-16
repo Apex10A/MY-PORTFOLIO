@@ -3,55 +3,52 @@ import Mypic from './my-pic.jpg';
 import Navigation from './Navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import Hello from './Hellos.gif';
-import Planet from './planet.gif';
-import { Link } from "react-router-dom";
-import Maintenance from './Maintenance/Maintenance';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>
-    <div className=''>
+    <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen text-white">
       <Navigation />
-      <div className='text-white px-10 lg:pt-[250px] flex justify-center xl:pb-10 items-center ' id='height'>
-        <div className='block items-center justify-center ' id='home-texter'>
-          <div className='text-center block'>
-            <h1 className='lg:text-7xl text-6xl lg:w-1/3 sm:w-2/3 mx-auto transform sm:pt-0 leading-28 block font-bold'>
-              Hello, I'm <span className='font-extrabold'>Praise Afolabi</span>
-            </h1>
-            <p className='lg:w-1/3 text-md lg:text-xl lg:leading-0 px-4 lg:px-0 leading-8 pt-5 mx-auto' id='para'>
-              A frontend virtuoso, crafting visually stunning experiences. With HTML, CSS, and JavaScript, I bring ideas to life. Let's collaborate and create digital magic that leaves a lasting impression!
-            </p>
-          </div>
-          <Link to='/project'>
+      <div className="flex flex-col items-center justify-between px-6 lg:px-10 lg:pt-[250px] pt-20">
+        {/* Hero Section */}
+        <div className="text-center">
+          <h1 className="text-4xl lg:text-7xl font-extrabold leading-tight">
+            Hello, I'm <span className="text-yellow-400">Praise Afolabi</span>
+          </h1>
+          <p className="mt-6 lg:mt-8 text-lg lg:text-xl max-w-2xl mx-auto text-gray-300">
+            A frontend virtuoso, crafting visually stunning experiences. With HTML, CSS, and JavaScript, I bring ideas to life. Let's collaborate and create digital magic that leaves a lasting impression!
+          </p>
+          <Link to="/project">
             <button
-              type='button'
-              className='mx-auto relative z-[10] block mt-10 lg:mt-6 mb-10 font-extrabold text-lg sm:px-20 px-10 py-5 hover:bg-transparent hover:border hover:border-white hover:text-white rounded-full bg-white text-black transition-background-color duration-500 ease-in-out'
-              id='btn'
+              type="button"
+              className="mt-8 px-8 py-4 text-lg font-bold bg-yellow-400 text-black rounded-md max-w-[60%]hover:bg-transparent  hover:border-yellow-400 hover:text-black transition-all duration-300"
             >
-              View Works
+              VIEW WORKS
             </button>
           </Link>
-          <div className='lg:top-[50px] mt-32'>
-            <div id='social' className='mx-auto justify-center gap-10 items-center flex'>
-              <a href="https://github.com/Apex17751">
-                <FontAwesomeIcon icon={faGithub} className='' id='github'/>
-              </a>
-              <a href="https://twitter.com/Afolabipraise3">
-                <FontAwesomeIcon icon={faTwitter} className='' id='twitter'/>
-              </a>
-              <a href="/temporarily/restricted">
-                <FontAwesomeIcon icon={faLinkedin} className='pointer' id='linkedin'/>
-              </a>
-            </div>
-            <div className='flex items-center justify-center mt-6' id='opaque'>
-              <p className='text-md pb-3 lg:pb-0 lg:text-lg'>copyright©: All Rights Reserved 2023</p>
-            </div>
-          </div>
         </div>
+
+  
       </div>
-      
-    </div>
+     <div className='relative bottom-0'>
+        {/* Social Icons */}
+        <div className="flex justify-center mt-16 space-x-8 ">
+          <a href="https://github.com/Apex10A" aria-label="GitHub">
+            <FontAwesomeIcon icon={faGithub} className="text-3xl hover:text-yellow-400 transition-colors duration-300" />
+          </a>
+          <a href="https://x.com/dev_apexxr" aria-label="Twitter">
+            <FontAwesomeIcon icon={faTwitter} className="text-3xl hover:text-yellow-400 transition-colors duration-300" />
+          </a>
+          <a href="/temporarily/restricted" aria-label="LinkedIn">
+            <FontAwesomeIcon icon={faLinkedin} className="text-3xl hover:text-yellow-400 transition-colors duration-300" />
+          </a>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-20 text-center text-gray-400 text-sm">
+          <p>© 2023 Praise Afolabi. All Rights Reserved.</p>
+        </footer>
+     </div>
     </div>
   );
 };
