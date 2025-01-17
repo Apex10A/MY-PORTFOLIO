@@ -6,11 +6,11 @@ import Navigation from './Navigation';
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen text-white">
+    <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen  text-white">
       <Navigation />
       
       {/* Hero Section */}
-      <div className="container mx-auto px-4 lg:px-8 pt-16 lg:pt-32">
+      <div className="container mx-auto relative z-10 px-4 lg:px-8 pt-44">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="text-center lg:text-left lg:w-1/2">
             <h1 className="text-4xl lg:text-7xl font-extrabold leading-tight">
