@@ -12,14 +12,14 @@ const Navigation = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="shadow-md w-full fixed top-0 z-50 bg-white md:bg-transparent">
+    <div className="shadow-md w-full fixed top-0 z-50 bg-[#0F1522]">
       <div className="flex items-center justify-between py-5 px-6 md:px-10">
         {/* Logo */}
         <div className="flex items-center">
           <span className=" text-3xl mr-2">
             <ion-icon name="logo-ionic"></ion-icon>
           </span>
-          <Link to="/" className="text-2xl font-bold text-black md:text-white">
+          <Link to="/" className="text-2xl font-bold text-white">
             Dev_Apex
           </Link>
         </div>
@@ -27,7 +27,7 @@ const Navigation = () => {
         {/* Hamburger Menu */}
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl cursor-pointer md:hidden text-black md:text-white"
+          className="text-3xl cursor-pointer md:hidden text-white"
           aria-label="Toggle navigation"
         >
           <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
