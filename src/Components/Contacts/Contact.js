@@ -80,7 +80,7 @@ const Contact = () => {
                   <div>
                     <p className="text-gray-400">Phone</p>
                     <a href="tel:+1234567890" className="hover:text-yellow-400">
-                      +123 456 7890
+                      +234 816 086 2773
                     </a>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400">Location</p>
-                    <p>Lagos, Nigeria</p>
+                    <p>Ondo, Nigeria</p>
                   </div>
                 </div>
               </div>
