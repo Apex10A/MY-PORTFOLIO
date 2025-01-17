@@ -1,85 +1,181 @@
-import React, {useRef} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import React, { useState } from 'react';
 import Navigation from '../Navigation';
-import emailjs from 'emailjs-com';
-
-
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
-    const sendEmail = (e) => {
-        e.preventDefault();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
 
-        emailjs.sendForm('service_849lg11', 'template_wdvzo2g', e.target, 'uqUpWBpfAw9BOXual')
-      .then((result) => {
-          console.log(result.text);
-          alert('Email sent successfully!');
-      }, (error) => {
-          console.log(error.text);
-          alert('Error sending email. Please try again.');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+  
+    try {
+      const response = await fetch('https://formspree.io/f/xjkkdorp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
-      e.target.reset();
+  
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   return (
-    <div id='kontat'>
-        <Navigation/>
-        <div className='h-[100%] lg:h-[100vh]' id='contact'>
-        <div  className='pt-32  pb-20'>
-        <div>
-            
-        </div>
-
-        <div className='lg:flex justify-evenly pt-20 items-center'>
-        <div className='items-center block justify-center'>
-        <div className='px-20'>
-        <p className='sm:text-3xl md:text-4xl text-2xl font-bold'>Let's chat.</p>
-        <p  className='sm:text-3xl md:text-4xl text-2xl font-bold'>Tell me about your project</p>
-        <div>
-            <p  className='sm:text-xl text-md font-medium pt-3'>Lets create something together</p>
-        </div>
-        <div className='mt-5 flex items-center' id='mailer'>
-            <div className='mr-2' id='enve'>
-            <FontAwesomeIcon icon={faEnvelope} />
-            </div>
-           <div>
-           <h1 className='sm:text-lg text-sm pl-3'> Mail me at:</h1>
-            <p className=''> <a href="mailto:praizafolabi12@gmail.com"><ins className='text-sm pl-3 sm:text-lg'>pafolabi740@gmail.com</ins></a></p>
-           </div>
-        </div>
-        </div>
-        </div>
-
-        <div className='items-center mx-auto lg:mx-0 justify-center flex mt-10 lg:mt-0' id='cont'>
-            <div className="block ">
-            <form action="" onSubmit={sendEmail} className='pt-10 pb-8' target="_blank" >
-            <div className='mb-3'>
-                <input type="text" name="name" id="name" placeholder='Name*' className='rounded-xl font-bold border-none outline-none px-4 py-4 ' required />
-            </div>
-            <div className='mb-3'>
-                <input type="email" name="email" id="mail" placeholder='Email Address*' className='rounded-xl font-bold border-none outline-none px-4 py-4 mt-3' required />
-            </div>
-            <div className='mb-3 mt-4 pt-5'>
-                <h1 className='mb-3 text-xl'>Tell us more about your project*</h1>
-                <textarea name="message" id="messa" placeholder='message...' className='rounded-xl px-3 outline-none py-3 mb-3' cols="30" rows="7"></textarea>
-            </div>
-            <div>
-                <input type="submit" value="Send Message" className='bg-red-700 mb-5 w-full py-4 cursor-pointer font-bold rounded-xl text-white px-3 text-xl mt-3 md:mt-0 hover:text-red hover:bg-white hover:text-red-700 duration-500 ease-in-out' />
-            </div>
-            </form>
-            </div>
-        </div>
-
-
-        
-        </div>
-
-
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <Navigation />
       
-    </div>
+      <div className="container mx-auto px-4 pt-24 pb-16">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+            Let's <span className="text-yellow-400">Connect</span>
+          </h1>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Have a project in mind or just want to chat? I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          </p>
         </div>
-    </div>
-  )
-}
 
-export default Contact
+        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-yellow-400 p-3 rounded-full">
+                    <Mail className="h-6 w-6 text-gray-900" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Email</p>
+                    <a href="mailto:pafolabi740@gmail.com" className="hover:text-yellow-400">
+                      pafolabi740@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-yellow-400 p-3 rounded-full">
+                    <Phone className="h-6 w-6 text-gray-900" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Phone</p>
+                    <a href="tel:+1234567890" className="hover:text-yellow-400">
+                      +123 456 7890
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-yellow-400 p-3 rounded-full">
+                    <MapPin className="h-6 w-6 text-gray-900" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400">Location</p>
+                    <p>Lagos, Nigeria</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4">Let's connect</h2>
+              <p className="text-gray-300">
+                Follow me on social media to stay updated with my latest projects and insights.
+              </p>
+              {/* Add your social media links here */}
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold mb-6">Send me a message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-yellow-400"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-yellow-400"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="6"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-yellow-400"
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="w-full bg-yellow-400 text-black py-3 px-6 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-300 flex items-center justify-center space-x-2"
+              >
+                <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
+                <Send className="h-5 w-5" />
+              </button>
+
+              {status === 'success' && (
+                <p className="text-green-400 text-center">Message sent successfully!</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-center">Failed to send message. Please try again.</p>
+              )}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

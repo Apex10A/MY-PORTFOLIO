@@ -51,7 +51,7 @@ const Navigation = () => {
           ))}
           <li className="md:ml-8">
             <Button>
-              <a href="/path/to/cv.pdf" download>
+              <a href="/Praise Afolabi.pdf" download>
                 Download CV
               </a>
             </Button>
